@@ -4,7 +4,7 @@ component {
 	property name="flash" inject="coldbox:flash";
 
 	function new( event, rc, prc ){
-        inertia( "Registrations/New" );
+		inertia( "Registrations/New" );
 	}
 
 	function create( event, rc, prc ){

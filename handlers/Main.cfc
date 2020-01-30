@@ -2,9 +2,7 @@ component extends="coldbox.system.EventHandler" secured {
 
 	// Default Action
 	function index( event, rc, prc ){
-        inertia( "Main/Index", {
-            "welcomeMessage": "Welcome to ColdBox and Inertia.js!"
-        } );
+		inertia( "Main/Index", { "welcomeMessage" : "Welcome to ColdBox and Inertia.js!" } );
 	}
 
 	/************************************** IMPLICIT ACTIONS *********************************************/
