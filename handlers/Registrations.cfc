@@ -4,8 +4,7 @@ component {
 	property name="flash" inject="coldbox:flash";
 
 	function new( event, rc, prc ){
-		param prc.errors = flash.get( "registration_form_errors", {} );
-		event.setView( "registrations/new" );
+        inertia( "Registrations/New" );
 	}
 
 	function create( event, rc, prc ){
@@ -23,7 +22,7 @@ component {
 		);
 
 		if ( result.hasErrors() ) {
-			flash.put( "registration_form_errors", result.getAllErrorsAsStruct() );
+			flash.put( "errors", result.getAllErrorsAsStruct() );
 			redirectBack();
 			return;
 		}

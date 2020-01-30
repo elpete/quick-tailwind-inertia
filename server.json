@@ -1,11 +1,10 @@
 {
     "app":{
-        "cfengine":"adobe@2016",
-        "libDirs":"lib/"
+        "cfengine":"lucee@5"
     },
     "web":{
         "rewrites":{
-            "enable":"true"
+            "enable":true
         }
     }
 }

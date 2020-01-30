@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Inertia ColdBox Test</title>
+    <title>Quick Tailwind Inertia Template</title>
     <link rel="stylesheet" href="#html.elixirPath( "/css/app.css" )#">
 </head>
 <body class="font-sans leading-none text-grey-darkest antialiased">

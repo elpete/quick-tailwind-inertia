@@ -9,7 +9,8 @@ component {
 			eventName : "event",
 			// Development Settings
 			reinitPassword : "",
-			handlersIndexAutoReload : true,
+            handlersIndexAutoReload : true,
+            jsonPayloadToRC : true,
 			// Implicit Events
 			defaultEvent : "",
 			requestStartHandler : "Main.onRequestStart",
@@ -74,13 +75,26 @@ component {
 		interceptorSettings = { customInterceptionPoints : "" };
 
 		// Register interceptors as an array, we need order
-		interceptors = [];
+		interceptors = [
+            { "class": "interceptors.SharedInertiaDataInterceptor" }
+        ];
 
 
 		// module setting overrides
 		moduleSettings = {
 			cbauth : { userServiceClass : "User" },
-			cbguard : { authenticationOverrideEvent : "login", authorizationOverrideEvent : "login" }
+			cbguard : {
+                "authenticationOverrideEvent": "login",
+                "authenticationAjaxOverrideEvent": "login",
+                "authorizationOverrideEvent": "login",
+                "authorizationAjaxOverrideEvent": "login",
+                "overrideActions" = {
+                    "authenticationOverrideEvent" = "relocate",
+                    "authenticationAjaxOverrideEvent" = "relocate",
+                    "authorizationOverrideEvent" = "relocate",
+                    "authorizationAjaxOverrideEvent" = "relocate"
+                }
+            }
 		};
 
 		/*

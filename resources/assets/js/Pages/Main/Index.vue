@@ -1,13 +1,16 @@
 <template>
-    <h2 class="text-xl">
-        {{ welcomeMessage }}
-    </h2>
+    <div class="w-full h-screen flex justify-center items-center">
+        <h2 class="text-5xl">
+            {{ welcomeMessage }}
+        </h2>
+    </div>
 </template>
 
 <script>
 import Layout from "@/Shared/Layout";
 
 export default {
+    metaInfo: { title: "Home" },
     layout: Layout,
     props: {
         welcomeMessage: {

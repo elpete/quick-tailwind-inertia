@@ -1,8 +1,20 @@
 <template>
-    <div class="container mx-auto py-8 flex flex-col items-center justify-center">
-        <h1 class="text-3xl">cbInertia</h1>
-        <div class="mt-8">
-            <slot></slot>
-        </div>
+  <div id="app" class="antialiased text-gray-900">
+    <div class="bg-gray-200 min-h-screen">
+      <Navbar />
+      <div class="container mx-auto mt-4">
+          <slot></slot>
+      </div>
     </div>
+  </div>
 </template>
+
+<script>
+import Navbar from "@/Shared/Navbar";
+
+export default {
+    components: {
+        Navbar
+    }
+}
+</script>

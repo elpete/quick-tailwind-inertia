@@ -10,7 +10,7 @@ let app = document.getElementById("app");
 new Vue({
     metaInfo: {
         title: "Loading…",
-        titleTemplate: "%s | Ping CRM",
+        titleTemplate: "%s | Quick Tailwind Inertia Template",
     },
     render: h => h(InertiaApp, {
         props: {
