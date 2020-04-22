@@ -4,6 +4,7 @@
     "adminAllowConcurrentLogin":true,
     "adminAllowedIPList":"",
     "adminLoginRequired":true,
+    "adminPassword":"${ADMIN_PASSWORD}",
     "adminRDSEnabled":"false",
     "adminRDSLoginRequired":"true",
     "adminRDSUserIDRequired":true,
