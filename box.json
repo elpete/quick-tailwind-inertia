@@ -1,8 +1,8 @@
 {
     "name":"Quick Tailwind Inertia Template",
-    "version":"2.1.0",
+    "version":"2.1.1",
     "author":"You",
-    "location":"elpete/quick-tailwind-inertia#v2.1.0",
+    "location":"elpete/quick-tailwind-inertia#v2.1.1",
     "slug":"cbtemplate-quick-tailwind-inertia",
     "createPackageDirectory":false,
     "type":"mvc",
