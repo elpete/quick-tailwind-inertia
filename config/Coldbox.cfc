@@ -80,6 +80,9 @@ component {
 
 		// module setting overrides
 		moduleSettings = {
+			"redirectBack": {
+				"includeAjax": true
+			},
 			cbauth : { userServiceClass : "User" },
 			cbguard : {
 				"authenticationOverrideEvent" : "login",

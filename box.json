@@ -44,7 +44,7 @@
         "cbguard":"^2.0.0",
         "BCrypt":"^2.5.0-snapshot",
         "cbvalidation":"^1.4.1+69",
-        "redirectBack":"^1.0.5",
+        "redirectBack":"^1.1.0",
         "cbInertia":"^1.4.0"
     },
     "scripts":{
