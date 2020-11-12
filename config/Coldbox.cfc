@@ -80,15 +80,13 @@ component {
 
 		// module setting overrides
 		moduleSettings = {
-			"redirectBack": {
-				"includeAjax": true
-			},
+			"redirectBack" : { "includeAjax" : true },
 			cbauth : { userServiceClass : "User" },
 			cbguard : {
-				"authenticationOverrideEvent" : "login",
-				"authenticationAjaxOverrideEvent" : "login",
-				"authorizationOverrideEvent" : "login",
-				"authorizationAjaxOverrideEvent" : "login",
+				"authenticationOverrideEvent" : "sessions.new",
+				"authenticationAjaxOverrideEvent" : "sessions.new",
+				"authorizationOverrideEvent" : "sessions.new",
+				"authorizationAjaxOverrideEvent" : "sessions.new",
 				"overrideActions" : {
 					"authenticationOverrideEvent" : "relocate",
 					"authenticationAjaxOverrideEvent" : "relocate",
@@ -133,7 +131,7 @@ component {
 	 * Development environment
 	 */
 	function development(){
-		coldbox.customErrorTemplate = "/coldbox/system/includes/BugReport.cfm";
+		coldbox.customErrorTemplate = "/coldbox/system/exceptions/Whoops.cfm";
 	}
 
 	function testing(){

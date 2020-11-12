@@ -1,9 +1,12 @@
 import Vue from "vue";
 import VueMeta from "vue-meta";
 import { InertiaApp } from "@inertiajs/inertia-vue";
+import { InertiaProgress } from "@inertiajs/progress";
 
 Vue.use(InertiaApp);
 Vue.use(VueMeta);
+
+InertiaProgress.init();
 
 let app = document.getElementById("app");
 

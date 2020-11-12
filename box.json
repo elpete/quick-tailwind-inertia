@@ -18,7 +18,7 @@
     "contributors":[],
     "ignore":[],
     "devDependencies":{
-        "testbox":"^3.0.0",
+        "testbox":"^4.0.0",
         "commandbox-dotenv":"*",
         "commandbox-migrations":"*",
         "commandbox-cfconfig":"*",
@@ -38,13 +38,13 @@
         "cbInertia":"modules/cbInertia/"
     },
     "dependencies":{
-        "coldbox":"^5.0.0",
-        "quick":"^3.0.0",
-        "cbauth":"^3.0.0",
-        "cbguard":"^2.0.0",
-        "BCrypt":"^2.5.0-snapshot",
-        "cbvalidation":"^1.4.1+69",
-        "redirectBack":"^1.1.0",
+        "coldbox":"^6.0.0",
+        "quick":"^4.0.0",
+        "cbauth":"^5.0.0",
+        "cbguard":"^4.0.0",
+        "BCrypt":"^2.5.0",
+        "cbvalidation":"^2.0.0",
+        "redirectBack":"^1.2.0",
         "cbInertia":"^1.4.0"
     },
     "scripts":{
