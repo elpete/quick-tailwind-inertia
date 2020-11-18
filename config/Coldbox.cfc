@@ -80,9 +80,10 @@ component {
 
 		// module setting overrides
 		moduleSettings = {
+			"cbInertia" : { "version" : () => hash( fileRead( expandPath( "/includes/rev-manifest.json" ) ) ) },
 			"redirectBack" : { "includeAjax" : true },
-			cbauth : { userServiceClass : "User" },
-			cbguard : {
+			"cbauth" : { "userServiceClass" : "User" },
+			"cbguard" : {
 				"authenticationOverrideEvent" : "sessions.new",
 				"authenticationAjaxOverrideEvent" : "sessions.new",
 				"authorizationOverrideEvent" : "sessions.new",
