@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --hide-modules",
+    "dev": "cross-env NODE_ENV=development webpack",
     "watch": "npm run dev -- --watch",
-    "prod": "cross-env NODE_ENV=production webpack -p --hide-modules"
+    "prod": "cross-env NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "@inertiajs/inertia": "^0.6.1",
@@ -24,6 +24,8 @@
     "postcss-nesting": "^7.0.1",
     "tailwindcss": "^1.9.6",
     "vue-loader": "^15.9.5",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+	"webpack": "^4.0.0",
+	"webpack-cli": "^4.0.0"
   }
 }
