@@ -1,20 +1,20 @@
 component {
 
-	property name="inertia" inject="provider:Inertia@cbInertia";
-	property name="auth" inject="provider:AuthenticationService@cbauth";
+	property name="_inertia" inject="provider:Inertia@cbInertia";
+	property name="_auth" inject="provider:AuthenticationService@cbauth";
 	property name="flash" inject="coldbox:flash";
 
 	function preProcess(){
-		inertia.share(
+		_inertia.share(
 			"auth",
 			{
 				"user" : function() {
-					return auth.check() ? auth.user().getMemento() : javacast( "null", "" );
+					return _auth.check() ? _auth.user().getMemento() : javacast( "null", "" );
 				}
 			}
 		);
 
-		inertia.share( "errors", function() {
+		_inertia.share( "errors", function() {
 			return flash.get( "errors", {} );
 		} );
 	}
