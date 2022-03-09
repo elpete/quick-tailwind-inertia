@@ -1,6 +1,6 @@
 component {
 
-	property name="auth" inject="AuthenticationService@cbauth";
+	property name="_auth" inject="AuthenticationService@cbauth";
 	property name="flash" inject="coldbox:flash";
 
 	function new( event, rc, prc ){
@@ -29,7 +29,7 @@ component {
 
 		var user = getInstance( "User" ).create( { "email" : rc.email, "password" : rc.password } );
 
-		auth.login( user );
+		_auth.login( user );
 
 		relocate( uri = "/" );
 	}

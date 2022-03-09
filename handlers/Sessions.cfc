@@ -1,6 +1,6 @@
 component {
 
-	property name="auth" inject="AuthenticationService@cbauth";
+	property name="_auth" inject="AuthenticationService@cbauth";
 	property name="flash" inject="coldbox:flash";
 
 	function new( event, rc, prc ){
@@ -20,7 +20,7 @@ component {
 		}
 
 		try{
-			auth.authenticate( rc.email, rc.password );
+			_auth.authenticate( rc.email, rc.password );
 			relocate( uri = "/" );
 		} catch ( InvalidCredentials e ) {
 			flash.put( "errors", { "login" : "Invalid Credentials" } );
@@ -29,7 +29,7 @@ component {
 	}
 
 	function delete( event, rc, prc ){
-		auth.logout();
+		_auth.logout();
 		relocate( uri = "/" );
 	}
 
