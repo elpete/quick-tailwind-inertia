@@ -5,16 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Quick Tailwind Inertia Template</title>
-    <link rel="stylesheet" href="#html.elixirPath( "/css/app.css" )#">
+	#vite( "/resources/assets/css/app.css" )#
 </head>
 <body class="font-sans leading-none text-grey-darkest antialiased">
     <div>
         #renderView()#
     </div>
 
-    <script src="#html.elixirPath( "/js/runtime.js" )#"></script>
-    <script src="#html.elixirPath( "/js/vendor.js" )#"></script>
-    <script src="#html.elixirPath( "/js/app.js" )#"></script>
+    <cfif fileExists( expandPath( "/includes/hot" ) )>
+		<cfparam name="local.hot" default="#fileRead( expandPath( "/includes/hot" ) )#" />
+		<script type="module" src="#local.hot#/resources/assets/js/app.js"></script>
+	<cfelse>
+		<cfparam name="local.manifest" default="#deserializeJSON( fileRead( expandPath( "/includes/build/manifest.json" ) ) )#" />
+		<script src="/includes/build/#local.manifest[ "resources/assets/js/app.js" ].file#"></script>
+	</cfif>
 </body>
 </html>
 </cfoutput>

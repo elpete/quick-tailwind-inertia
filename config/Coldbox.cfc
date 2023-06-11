@@ -22,7 +22,7 @@ component {
 			missingTemplateHandler : "",
 			// Extension Points
 			applicationHelper : "",
-			viewsHelper : "",
+			viewsHelper : "models/ViewHelper",
 			modulesExternalLocation : [],
 			viewsExternalLocation : "",
 			layoutsExternalLocation : "",
@@ -80,7 +80,15 @@ component {
 
 		// module setting overrides
 		moduleSettings = {
-			"cbInertia" : { "version" : () => hash( fileRead( expandPath( "/includes/rev-manifest.json" ) ) ) },
+			"cbInertia" : {
+				"version" : () => {
+					if ( fileExists( expandPath( "/includes/build/manifest.json" ) ) ) {
+						return hash( fileRead( expandPath( "/includes/build/manifest.json" ) ) );
+					}
+
+					return "";
+				}
+			},
 			"redirectBack" : { "includeAjax" : true },
 			"cbauth" : { "userServiceClass" : "User" },
 			"cbguard" : {

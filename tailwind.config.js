@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     "./resources/assets/**/*.vue",
     "./resources/assets/**/*.js",
     "./views/**/*.cfm",

@@ -1,26 +1,19 @@
-import Vue from "vue";
-import VueMeta from "vue-meta";
-import { InertiaApp } from "@inertiajs/inertia-vue";
-import { InertiaProgress } from "@inertiajs/progress";
+import Layout from "./Shared/Layout.vue";
+import { createApp, h } from "vue";
+import { createInertiaApp } from "@inertiajs/vue3";
 
-Vue.use(InertiaApp);
-Vue.use(VueMeta);
-
-InertiaProgress.init();
-
-let app = document.getElementById("app");
-
-new Vue({
-    metaInfo: {
-        title: "Loading…",
-        titleTemplate: "%s | Quick Tailwind Inertia Template",
-    },
-    render: h => h(InertiaApp, {
-        props: {
-            initialPage: JSON.parse(app.dataset.page),
-            resolveComponent: name => import(
-                /* webpackChunkName: 'includes/js/pages/[request]' */ `@/Pages/${name}`
-            ).then(module => module.default),
-        },
-    }),
-}).$mount(app);
+createInertiaApp({
+	id: "app",
+	title: title => `${title} | Quick Tailwind Inertia Template`,
+	resolve: name => {
+		const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
+		let page = pages[`./Pages/${name}.vue`];
+		page.default.layout = page.default.layout || Layout;
+		return page;
+	},
+	setup({ el, App, props, plugin }) {
+		createApp({ render: () => h(App, props) })
+			.use(plugin)
+			.mount(el)
+	},
+});
