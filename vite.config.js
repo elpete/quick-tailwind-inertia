@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import coldbox from "coldbox-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 
-export default ({ mode, command }) => {
+export default () => {
 	return defineConfig({
 		plugins: [
 			vue(),

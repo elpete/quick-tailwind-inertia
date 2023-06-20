@@ -22,7 +22,7 @@ component {
 			missingTemplateHandler : "",
 			// Extension Points
 			applicationHelper : "",
-			viewsHelper : "models/ViewHelper",
+			viewsHelper : "",
 			modulesExternalLocation : [],
 			viewsExternalLocation : "",
 			layoutsExternalLocation : "",
@@ -80,15 +80,6 @@ component {
 
 		// module setting overrides
 		moduleSettings = {
-			"cbInertia" : {
-				"version" : () => {
-					if ( fileExists( expandPath( "/includes/build/manifest.json" ) ) ) {
-						return hash( fileRead( expandPath( "/includes/build/manifest.json" ) ) );
-					}
-
-					return "";
-				}
-			},
 			"redirectBack" : { "includeAjax" : true },
 			"cbauth" : { "userServiceClass" : "User" },
 			"cbguard" : {
@@ -140,6 +131,7 @@ component {
 	 * Development environment
 	 */
 	function development(){
+		coldbox.debugMode = true;
 		coldbox.customErrorTemplate = "/coldbox/system/exceptions/Whoops.cfm";
 	}
 

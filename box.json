@@ -1,8 +1,8 @@
 {
     "name":"Quick Tailwind Inertia Template",
-    "version":"3.1.1",
+    "version":"5.0.0",
     "author":"You",
-    "location":"elpete/quick-tailwind-inertia#v3.1.1",
+    "location":"elpete/quick-tailwind-inertia#v4.0.0",
     "slug":"cbtemplate-quick-tailwind-inertia",
     "createPackageDirectory":false,
     "type":"mvc",
@@ -18,34 +18,29 @@
     "contributors":[],
     "ignore":[],
     "devDependencies":{
-        "testbox":"^4.0.0",
-        "commandbox-dotenv":"*",
-        "commandbox-migrations":"*",
-        "commandbox-cfconfig":"*",
-        "commandbox-cfformat":"*",
-        "cfmigrations":"^2.0.0"
+        "testbox":"^5.0.0",
+        "commandbox-migrations":"^5.1.0",
+        "cfmigrations":"^4.0.0"
     },
     "installPaths":{
         "coldbox":"coldbox/",
         "testbox":"testbox/",
         "quick":"modules/quick/",
-        "cbauth":"modules/cbauth/",
-        "cbguard":"modules/cbguard/",
         "BCrypt":"modules/BCrypt/",
         "cbvalidation":"modules/cbvalidation/",
-        "redirectBack":"modules/redirectBack/",
         "cfmigrations":"modules/cfmigrations/",
-        "cbInertia":"modules/cbInertia/"
+        "cbInertia":"modules/cbInertia/",
+        "vite-helpers":"modules/vite-helpers/",
+        "cbsecurity":"modules/cbsecurity/"
     },
     "dependencies":{
-        "coldbox":"^6.0.0",
-        "quick":"^4.0.0",
-        "cbauth":"^5.0.0",
-        "cbguard":"^4.0.0",
-        "BCrypt":"^2.5.0",
-        "cbvalidation":"^2.0.0",
-        "redirectBack":"^1.2.0",
-        "cbInertia":"^1.4.0"
+        "coldbox":"^7.0.0",
+        "quick":"^7.0.0",
+        "BCrypt":"^3.0.0",
+        "cbvalidation":"^4.0.0",
+        "cbInertia":"^1.4.0",
+        "vite-helpers":"^1.0.0",
+        "cbsecurity":"^3.4.0+1"
     },
     "scripts":{
         "preVersion":"run-script format:check",
@@ -55,17 +50,5 @@
         "postInstall":"pathExists .env || cp .env.example .env",
         "format":"cfformat run config/**/*.cfc,handlers/**/*.cfc,includes/**/*.cfc,interceptors/**/*.cfc,layouts/**/*.cfc,models/**/*.cfc,modules_app/**/*.cfc,resources/**/*.cfc,tests/specs/**/*.cfc,views/**/*.cfc,*.cfc --overwrite",
         "format:check":"cfformat check config/**/*.cfc,handlers/**/*.cfc,includes/**/*.cfc,interceptors/**/*.cfc,layouts/**/*.cfc,models/**/*.cfc,modules_app/**/*.cfc,resources/**/*.cfc,tests/specs/**/*.cfc,views/**/*.cfc,*.cfc"
-    },
-    "cfmigrations":{
-        "schema":"${DB_SCHEMA}",
-        "connectionInfo":{
-            "password":"${DB_PASSWORD}",
-            "connectionString":"${DB_CONNECTIONSTRING}",
-            "class":"${DB_CLASS}",
-            "username":"${DB_USER}",
-            "bundleName":"${DB_BUNDLENAME}",
-            "bundleVersion":"${DB_BUNDLEVERSION}"
-        },
-        "defaultGrammar":"AutoDiscover@qb"
     }
 }

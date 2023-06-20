@@ -1,14 +1,14 @@
 component {
 
-	function up( schema, query ){
-		schema.create( "users", function(table) {
-			table.increments( "id" );
-			table.string( "email" ).unique();
-			table.string( "password" );
+	function up( schema, qb ){
+		schema.create( "users", (t) => {
+			t.increments( "id" );
+			t.string( "email" ).unique();
+			t.string( "password" );
 		} );
 	}
 
-	function down( schema, query ){
+	function down( schema, qb ){
 		schema.drop( "users" );
 	}
 

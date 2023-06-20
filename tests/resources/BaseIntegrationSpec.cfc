@@ -1,24 +1,14 @@
 component extends="coldbox.system.testing.BaseTestCase" {
 
-    property name="migrationService" inject="MigrationService@cfmigrations";
-
-    this.loadColdBox = true;
-    this.unloadColdBox = false;
-
-    /**
-     * Run Before all tests
-     */
     function beforeAll() {
         super.beforeAll();
-        // Wire up this object
         application.wirebox.autowire( this );
 
         // Check if migrations ran before all tests
         if ( ! request.keyExists( "migrationsRan" ) ) {
-            migrationService.setMigrationsDirectory( "/root/resources/database/migrations" );
-	        migrationService.setDefaultGrammar( "PostgresGrammar" );
-            migrationService.setDatasource( "testing" );
+			var migrationService = application.wirebox.getInstance( "migrationService:testing" );
             migrationService.reset();
+            migrationService.install();
             migrationService.runAllMigrations( "up" );
             request.migrationsRan = true;
         }

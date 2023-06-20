@@ -4,9 +4,7 @@ component extends="tests.resources.BaseIntegrationSpec" {
 
 	function run(){
 		describe( "sessions", function() {
-			beforeEach( function() {
-				auth.logout();
-			} );
+			beforeEach( () => auth.quietLogout() );
 
 			it( "can log in a user", function() {
 				var user = getInstance( "User" ).create( { "email" : "jon@example.com", "password" : "1234" } );

@@ -29,7 +29,7 @@ Compile the assets using the provided package scripts:
 ```
 npm run dev
 # OR
-npm run watch
+npm run build
 ```
 
 You can then type:
