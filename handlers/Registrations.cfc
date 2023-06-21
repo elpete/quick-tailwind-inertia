@@ -23,7 +23,7 @@ component {
 
 		if ( result.hasErrors() ) {
 			flash.put( "errors", result.getAllErrorsAsStruct() );
-			redirectBack();
+			back();
 			return;
 		}
 

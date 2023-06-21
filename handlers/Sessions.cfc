@@ -15,7 +15,7 @@ component {
 
 		if ( result.hasErrors() ) {
 			flash.put( "errors", result.getAllErrorsAsStruct() );
-			redirectBack();
+			back();
 			return;
 		}
 
@@ -24,7 +24,7 @@ component {
 			relocate( uri = "/" );
 		} catch ( InvalidCredentials e ) {
 			flash.put( "errors", { "login" : "Invalid Credentials" } );
-			redirectBack();
+			back();
 		}
 	}
 

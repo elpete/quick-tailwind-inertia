@@ -77,25 +77,6 @@ component {
 		// Register interceptors as an array, we need order
 		interceptors = [ { "class" : "interceptors.SharedInertiaDataInterceptor" } ];
 
-
-		// module setting overrides
-		moduleSettings = {
-			"redirectBack" : { "includeAjax" : true },
-			"cbauth" : { "userServiceClass" : "User" },
-			"cbguard" : {
-				"authenticationOverrideEvent" : "sessions.new",
-				"authenticationAjaxOverrideEvent" : "sessions.new",
-				"authorizationOverrideEvent" : "sessions.new",
-				"authorizationAjaxOverrideEvent" : "sessions.new",
-				"overrideActions" : {
-					"authenticationOverrideEvent" : "relocate",
-					"authenticationAjaxOverrideEvent" : "relocate",
-					"authorizationOverrideEvent" : "relocate",
-					"authorizationAjaxOverrideEvent" : "relocate"
-				}
-			}
-		};
-
 		/*
 		// flash scope configuration
 		flash = {
