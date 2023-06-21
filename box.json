@@ -38,7 +38,7 @@
         "quick":"^7.0.0",
         "BCrypt":"^3.0.0",
         "cbvalidation":"^4.0.0",
-        "cbInertia":"^1.4.0",
+        "cbInertia":"^2.0.0",
         "vite-helpers":"^1.0.0",
         "cbsecurity":"^3.4.0+1"
     },
