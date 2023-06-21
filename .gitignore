@@ -18,6 +18,7 @@ yarn-error.log
 ## Ignored Dependencies
 coldbox/*
 testbox/*
-modules/*
+/modules/*
+!/config/modules/*
 **/apidocs/**
 includes
